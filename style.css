@@ -63,6 +63,11 @@ hr {
   margin-right: 60px;
 }
 /*--------------------------------------Main--Content----------------------------------*/
+.overflow {
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+}
 .sec-heading {
   position: relative;
   top: 25px;
@@ -87,7 +92,7 @@ main {
   right: 70px;
   width: 110%;
 }
-.items-quantity {
+.quantity {
   position: relative;
   top: 30px;
   left: 30px;
@@ -174,4 +179,14 @@ input {
   cursor: pointer;
   background-color: rgb(107, 186, 29);
 }
+.merch-total,
+.shipping,
+.order-total {
+  color: black;
+}
 /*-------------------------------------------------Footer section--------------------------------*/
+
+.footer-sect {
+  color: rgba(0, 0, 0, 0.453);
+  text-align: center;
+}
