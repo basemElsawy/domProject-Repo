@@ -8,17 +8,24 @@ let prices = document.querySelectorAll('.price');
 let productQty = document.querySelectorAll('.adding');
 let product = document.querySelectorAll('.add-remove');
 let removeBtn = document.querySelectorAll('.RemoveItm');
-// --------------------/*EventListeners & Functions */
 
-let productCalc = () => {
-  itemsQty.innerHTML = product.length;
+//-----------------variables---------------
+Number(prices);
+Number(productQty);
+let priceTotal;
+Number(priceTotal);
+
+// --------------------/*EventListeners & Functions */
+let merchCalc = () => {
+  priceTotal = prices.innerHTML * productQty.innerHTML;
+  merchTotal.innerHTML = priceTotal;
 };
 
-productCalc();
 //------------------------------increment btn -----------
 incrementBtn.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
     productQty[idx].innerHTML++;
+    merchCalc();
   });
 });
 
@@ -44,5 +51,11 @@ del = (arr, idx) => {
 removeBtn.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
     del(product, idx);
+    itemsQty.innerHTML--;
   });
 });
+let productCalc = () => {
+  itemsQty.innerHTML = product.length;
+};
+
+productCalc();

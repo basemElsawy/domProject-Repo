@@ -76,7 +76,7 @@ hr {
 main {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
 }
 .cart {
   position: relative;
@@ -171,6 +171,8 @@ main {
 }
 .main-section-2 {
   padding: 50px;
+
+  bottom: 0px;
 }
 input {
   position: relative;
@@ -206,6 +208,10 @@ input {
 /*-------------------------------------------------Footer section--------------------------------*/
 
 .footer-sect {
+  position: sticky;
+  position: -webkit-sticky;
+  bottom: 0;
   color: rgba(0, 0, 0, 0.453);
   text-align: center;
+  padding: 10px;
 }
