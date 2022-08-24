@@ -1,3 +1,4 @@
+'use strict';
 //Calling elements from the DOM
 let itemsQty = document.querySelector('.items-quantity');
 let incrementBtn = document.querySelectorAll('.increment');
@@ -10,15 +11,17 @@ let product = document.querySelectorAll('.add-remove');
 let removeBtn = document.querySelectorAll('.RemoveItm');
 
 //-----------------variables---------------
-Number(prices);
-Number(productQty);
+Number(merchTotal.innerHTML);
+Number(prices.innerHTML);
+Number(productQty.innerHTML);
 let priceTotal;
 Number(priceTotal);
 
 // --------------------/*EventListeners & Functions */
 let merchCalc = () => {
-  priceTotal = prices.innerHTML * productQty.innerHTML;
+  priceTotal = Number(prices.innerHTML) * Number(productQty.innerHTML);
   merchTotal.innerHTML = priceTotal;
+  console.log(merchTotal.innerHTML);
 };
 
 //------------------------------increment btn -----------
@@ -43,9 +46,9 @@ decrementBtn.forEach((btn, idx) => {
 
 //--------------------DELETE FUNCTION---------------
 
-del = (arr, idx) => {
+function del(arr, idx) {
   arr[idx].remove();
-};
+}
 
 //--------------------REMOVE BTN --------------------
 removeBtn.forEach((btn, idx) => {
