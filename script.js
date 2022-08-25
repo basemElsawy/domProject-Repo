@@ -11,24 +11,24 @@ let product = document.querySelectorAll('.add-remove');
 let removeBtn = document.querySelectorAll('.RemoveItm');
 
 //-----------------variables---------------
-Number(merchTotal.innerHTML);
-Number(prices.innerHTML);
-Number(productQty.innerHTML);
-let priceTotal;
-Number(priceTotal);
 
 // --------------------/*EventListeners & Functions */
-let merchCalc = () => {
-  priceTotal = Number(prices.innerHTML) * Number(productQty.innerHTML);
-  merchTotal.innerHTML = priceTotal;
-  console.log(merchTotal.innerHTML);
+let qtyCalc = (idx) => {
+  if (productQty === true) {
+    merchTotal.innerText += Number(prices[idx].innerText);
+  } else {
+  }
 };
-
+qtyCalc(prices);
+let merchCalc = (idx) => {
+  merchTotal.innerText =
+    Number(merchTotal.innerText) + Number(prices[idx].innerText);
+};
 //------------------------------increment btn -----------
 incrementBtn.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
     productQty[idx].innerHTML++;
-    merchCalc();
+    merchCalc(idx);
   });
 });
 
@@ -38,8 +38,11 @@ decrementBtn.forEach((btn, idx) => {
   btn.addEventListener('click', () => {
     if (productQty[idx].innerHTML <= 1) {
       del(product, idx);
+      itemsQty.innerHTML--;
     } else {
       productQty[idx].innerHTML--;
+      merchTotal.innerText =
+        Number(merchTotal.innerText) - Number(prices[idx].innerText);
     }
   });
 });
