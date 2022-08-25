@@ -11,15 +11,15 @@ let product = document.querySelectorAll('.add-remove');
 let removeBtn = document.querySelectorAll('.RemoveItm');
 
 //-----------------variables---------------
+Number(prices.innerText);
+// --------------------/*EventListeners & Functions */------------
 
-// --------------------/*EventListeners & Functions */
-let qtyCalc = (idx) => {
-  if (productQty === true) {
+let iniitializeMerch = (idx) => {
+  for (let i = 0; i <= prices.length; i++) {
     merchTotal.innerText += Number(prices[idx].innerText);
-  } else {
   }
 };
-qtyCalc(prices);
+
 let merchCalc = (idx) => {
   merchTotal.innerText =
     Number(merchTotal.innerText) + Number(prices[idx].innerText);
